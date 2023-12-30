@@ -1,4 +1,4 @@
-// const { i18n } = require("./next-i18next.config");
+const { i18n } = require("./next-i18next.config");
 
 module.exports = {
   // i18n,
@@ -10,16 +10,23 @@ module.exports = {
   },
 };
 
-// const withBundleAnalyzer = require("@next/bundle-analyzer")({
-//   enabled: .ANALYZE === "true",
-// });
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
-// module.exports = withBundleAnalyzer({
-//   i18n,
-//   devIndicators: {},
-//   publicRuntimeConfig: {
-//     // Available on both server and client
-//     theme: "DEFAULT",
-//     currency: "USD",
-//   },
-// });
+module.exports = withBundleAnalyzer({
+  i18n,
+  devIndicators: {},
+  publicRuntimeConfig: {
+    // Available on both server and client
+    theme: "DEFAULT",
+    currency: "USD",
+  },
+});
+
+const nextConfig = {
+  output: 'export',
+  distDir: "build",
+};
+
+module.exports = nextConfig;
