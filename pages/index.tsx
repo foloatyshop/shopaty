@@ -1,12 +1,10 @@
 // Front-End
-import { FC, useState, useEffect } from "react";
+import {  useState, useEffect } from "react";
 import { GetStaticProps, NextPage } from "next";
 import { Container } from "@mui/material";
 import SEO from "components/SEO";
 import Setting from "components/Setting";
-import Newsletter from "components/Newsletter";
 import ShopLayout1 from "components/layouts/ShopLayout1";
-import { MobileNavigationBar } from "components/mobile-navigation";
 import Section1 from "pages-sections/grocery3/Section1";
 import Section2 from "pages-sections/grocery3/Section2";
 import Section3 from "pages-sections/grocery3/Section3";
@@ -19,7 +17,7 @@ import Hutieu from "pages-sections/grocery3/Hutieu";
 import Kho from "pages-sections/grocery3/Kho";
 import Banhkeo from "pages-sections/grocery3/Banhkeo";
 // Back-End
-import { collection, doc, getDoc, getDocs } from "firebase/firestore"; 
+import { collection,  getDocs } from "firebase/firestore"; 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "../src/firebase";
 import Yen from "pages-sections/grocery3/Yen";
