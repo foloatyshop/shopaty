@@ -1,13 +1,13 @@
 import { FC, useState } from "react";
-import { Button, Card, Grid, MenuItem, TextField } from "@mui/material";
+import { Button, Card, Grid, TextField } from "@mui/material";
 import { Formik } from "formik";
 import DropZone from "components/DropZone";
 import { FlexBox } from "components/flex-box";
 import BazaarImage from "components/BazaarImage";
 import { UploadImageBox, StyledClear } from "../StyledComponents";
 // Back-End
-import { arrayUnion, doc, setDoc } from "firebase/firestore"; 
-import { auth, db, storage } from "../../../../src/firebase";
+// import { arrayUnion, doc, setDoc } from "firebase/firestore"; 
+import {  storage } from "../../../../src/firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 // ================================================================
