@@ -5,7 +5,7 @@ import { H3 } from "components/Typography";
 import TraiCayProductForm from "pages-sections/admin/products/TraiCayProductForm";
 import VendorDashboardLayout from "components/layouts/vendor-dashboard";
 // Back-End
-import { arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore"; 
+import { arrayUnion, doc, updateDoc } from "firebase/firestore"; 
 import { v4 as uuidv4 } from 'uuid';
 import { db } from "../../../src/firebase";
 import { useSnackbar } from "notistack";
