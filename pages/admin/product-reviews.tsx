@@ -1,36 +1,36 @@
-// import { ReactElement } from "react";
-// import { GetStaticProps } from "next";
-// import { Box, Card, Stack, Table, TableContainer } from "@mui/material";
-// import TableBody from "@mui/material/TableBody";
-// import TableHeader from "components/data-table/TableHeader";
-// import TablePagination from "components/data-table/TablePagination";
-// import VendorDashboardLayout from "components/layouts/vendor-dashboard";
-// import Scrollbar from "components/Scrollbar";
-// import { H3 } from "components/Typography";
-// import useMuiTable from "hooks/useMuiTable";
-// import { ReviewRow } from "pages-sections/admin";
-// import api from "utils/__api__/dashboard";
-// import Review from "models/Review.model";
+import { ReactElement } from "react";
+import { GetStaticProps } from "next";
+import { Box, Card, Stack, Table, TableContainer } from "@mui/material";
+import TableBody from "@mui/material/TableBody";
+import TableHeader from "components/data-table/TableHeader";
+import TablePagination from "components/data-table/TablePagination";
+import VendorDashboardLayout from "components/layouts/vendor-dashboard";
+import Scrollbar from "components/Scrollbar";
+import { H3 } from "components/Typography";
+import useMuiTable from "hooks/useMuiTable";
+import { ReviewRow } from "pages-sections/admin";
+import api from "utils/__api__/dashboard";
+import Review from "models/Review.model";
 
-// // TABLE HEADING DATA LIST
-// const tableHeading = [
-//   { id: "product", label: "Product", align: "left" },
-//   { id: "customer", label: "Customer", align: "left" },
-//   { id: "comment", label: "Comment", align: "left" },
-//   { id: "published", label: "Published", align: "left" },
-//   { id: "action", label: "Action", align: "center" },
-// ];
+// TABLE HEADING DATA LIST
+const tableHeading = [
+  { id: "product", label: "Product", align: "left" },
+  { id: "customer", label: "Customer", align: "left" },
+  { id: "comment", label: "Comment", align: "left" },
+  { id: "published", label: "Published", align: "left" },
+  { id: "action", label: "Action", align: "center" },
+];
 
-// // =============================================================================
-// ProductReviews.getLayout = function getLayout(page: ReactElement) {
-//   return <VendorDashboardLayout>{page}</VendorDashboardLayout>;
-// };
-// // =============================================================================
-// type ProductReviewsProps = { reviews: Review[] };
-// // =============================================================================
+// =============================================================================
+ProductReviews.getLayout = function getLayout(page: ReactElement) {
+  return <VendorDashboardLayout>{page}</VendorDashboardLayout>;
+};
+// =============================================================================
+type ProductReviewsProps = { reviews: Review[] };
+// =============================================================================
 
-// export default function ProductReviews({ reviews }: ProductReviewsProps) {
-//   // RESHAPE THE REVIEW LIST BASED TABLE HEAD CELL ID
+export default function ProductReviews({ reviews }: ProductReviewsProps) {
+  // RESHAPE THE REVIEW LIST BASED TABLE HEAD CELL ID
 //   const filteredrReviews = reviews.map((item) => ({
 //     id: item.id,
 //     published: true,
@@ -51,45 +51,45 @@
 //     handleRequestSort,
 //   } = useMuiTable({ listData: filteredrReviews, defaultSort: "product" });
 
-//   return (
-//     <Box py={4}>
-//       <H3 mb={2}>Product Reviews</H3>
+  return (
+    <Box py={4}>
+      {/* <H3 mb={2}>Product Reviews</H3>
 
-//       <Card>
-//         <Scrollbar>
-//           <TableContainer sx={{ minWidth: 1000 }}>
-//             <Table>
-//               <TableHeader
-//                 order={order}
-//                 hideSelectBtn
-//                 orderBy={orderBy}
-//                 heading={tableHeading}
-//                 numSelected={selected.length}
-//                 rowCount={filteredList.length}
-//                 onRequestSort={handleRequestSort}
-//               />
+      <Card>
+        <Scrollbar>
+          <TableContainer sx={{ minWidth: 1000 }}>
+            <Table>
+              <TableHeader
+                order={order}
+                hideSelectBtn
+                orderBy={orderBy}
+                heading={tableHeading}
+                numSelected={selected.length}
+                rowCount={filteredList.length}
+                onRequestSort={handleRequestSort}
+              />
 
-//               <TableBody>
-//                 {filteredList.map((review) => (
-//                   <ReviewRow review={review} key={review.id} />
-//                 ))}
-//               </TableBody>
-//             </Table>
-//           </TableContainer>
-//         </Scrollbar>
+              <TableBody>
+                {filteredList.map((review) => (
+                  <ReviewRow review={review} key={review.id} />
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Scrollbar>
 
-//         <Stack alignItems="center" my={4}>
-//           <TablePagination
-//             onChange={handleChangePage}
-//             count={Math.ceil(filteredList.length / rowsPerPage)}
-//           />
-//         </Stack>
-//       </Card>
-//     </Box>
-//   );
-// }
+        <Stack alignItems="center" my={4}>
+          <TablePagination
+            onChange={handleChangePage}
+            count={Math.ceil(filteredList.length / rowsPerPage)}
+          />
+        </Stack>
+      </Card> */}
+    </Box>
+  );
+}
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const reviews = await api.reviews();
-//   return { props: { reviews } };
-// };
+export const getStaticProps: GetStaticProps = async () => {
+  const reviews = await api.reviews();
+  return { props: { reviews } };
+};
