@@ -1,4 +1,4 @@
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { ReactElement, useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 import { Box, Card, Stack, Table, TableContainer } from "@mui/material";
@@ -36,11 +36,11 @@ type ProductListProps = { products: Product[] };
 // =============================================================================
 
 export default function ToYenAdmin(props: ProductListProps) {
-    const { products } = props;
+   
     const [sanpham, setSanpham] = useState([]);
     const [render, setRender] = useState(false)
     // RESHAPE THE PRODUCT LIST BASED TABLE HEAD CELL ID
-    const filteredProducts = sanpham[3]?.products.map((item) => ({
+    const filteredProducts = sanpham[3]?.products.map((item :any) => ({
         id: item.id,
         slug: item.name,
         name: item.name,

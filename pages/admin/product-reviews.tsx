@@ -1,14 +1,7 @@
 import { ReactElement } from "react";
 import { GetStaticProps } from "next";
-import { Box, Card, Stack, Table, TableContainer } from "@mui/material";
-import TableBody from "@mui/material/TableBody";
-import TableHeader from "components/data-table/TableHeader";
-import TablePagination from "components/data-table/TablePagination";
+import { Box} from "@mui/material";
 import VendorDashboardLayout from "components/layouts/vendor-dashboard";
-import Scrollbar from "components/Scrollbar";
-import { H3 } from "components/Typography";
-import useMuiTable from "hooks/useMuiTable";
-import { ReviewRow } from "pages-sections/admin";
 import api from "utils/__api__/dashboard";
 import Review from "models/Review.model";
 

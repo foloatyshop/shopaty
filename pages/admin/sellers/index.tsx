@@ -10,12 +10,12 @@ import VendorDashboardLayout from "components/layouts/vendor-dashboard";
 import { H3 } from "components/Typography";
 import useMuiTable from "hooks/useMuiTable";
 import Scrollbar from "components/Scrollbar";
-import ProductAdminRow from "pages-sections/admin/products/ProductAdminRow";
+// import ProductAdminRow from "pages-sections/admin/products/ProductAdminRow";
 import api from "utils/__api__/dashboard";
 import Product from "models/Product.model";
 // Back-End
-import { collection, doc, getDoc, getDocs } from "firebase/firestore"; 
-import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+import { collection, getDocs } from "firebase/firestore"; 
+import {  onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "../../../src/firebase";
 import SellersAdminRow from "pages-sections/admin/sellers/SellerAdminRow";
 

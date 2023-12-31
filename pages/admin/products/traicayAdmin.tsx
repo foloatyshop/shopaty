@@ -1,4 +1,4 @@
-import Router, { useRouter } from "next/router";
+import  { useRouter } from "next/router";
 import { ReactElement, useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 import { Box, Card, Stack, Table, TableContainer } from "@mui/material";
@@ -15,7 +15,7 @@ import api from "utils/__api__/dashboard";
 import Product from "models/Product.model";
 // Back-End
 import { collection, getDocs } from "firebase/firestore"; 
-import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+import {  onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "../../../src/firebase";
 
 // TABLE HEADING DATA LIST
@@ -36,11 +36,11 @@ type ProductListProps = { products: Product[] };
 // =============================================================================
 
 export default function TraiCayAdmin(props: ProductListProps) {
-    const { products } = props;
+    // const { products } = props;
     const [sanpham, setSanpham] = useState([]);
     const [render, setRender] = useState(false)
     // RESHAPE THE PRODUCT LIST BASED TABLE HEAD CELL ID
-    const filteredProducts = sanpham[4]?.products.map((item) => ({
+    const filteredProducts = sanpham[4]?.products.map((item : any) => ({
         id: item.id,
         slug: item.name,
         name: item.name,

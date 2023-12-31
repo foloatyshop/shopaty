@@ -1,5 +1,4 @@
-import { ReactElement, useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { ReactElement, useState } from "react";
 import { Box } from "@mui/material";
 import * as yup from "yup";
 import { H3 } from "components/Typography";
@@ -35,7 +34,7 @@ const validationSchema = yup.object().shape({
 });
 
 export default function EditProduct() {
-  const { query } = useRouter();
+
   const [product, setProduct] = useState({ ...INITIAL_VALUES });
 
   // useEffect(() => {
